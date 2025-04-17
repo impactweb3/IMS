@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Dashboard - Impact Web3</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="description" content="View and analyze impact data from blockchain projects across social, environmental, economic, and governance dimensions.">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Impact Web3</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#architecture">Architecture</a></li>
+                    <li><a href="index.html#roadmap">Roadmap</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <!-- Auth buttons will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard-container">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Impact Dashboard</h1>
+                <p>Explore and analyze impact data from blockchain projects across social, environmental, economic, and governance dimensions.</p>
+                
+                <div class="dashboard-controls">
+                    <div class="dashboard-tabs">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="social">Social Impact</button>
+                        <button class="tab-btn" data-tab="environmental">Environmental Impact</button>
+                        <button class="tab-btn" data-tab="economic">Economic Impact</button>
+                        <button class="tab-btn" data-tab="governance">Governance Impact</button>
+                        <button class="tab-btn" data-tab="my-projects">My Projects</button>
+                    </div>
+                    
+                    <div class="dashboard-filters">
+                        <select id="blockchainFilter">
+                            <option value="all">All Blockchains</option>
+                            <option value="cardano">Cardano</option>
+                            <option value="midnight">Midnight</option>
+                            <option value="ethereum">Ethereum</option>
+                            <option value="polygon">Polygon</option>
+                            <option value="solana">Solana</option>
+                        </select>
+                        
+                        <select id="projectTypeFilter">
+                            <option value="all">All Project Types</option>
+                            <option value="defi">DeFi</option>
+                            <option value="nft">NFT</option>
+                            <option value="dao">DAO</option>
+                            <option value="infrastructure">Infrastructure</option>
+                            <option value="social_impact">Social Impact</option>
+                            <option value="environmental">Environmental</option>
+                        </select>
+                        
+                        <select id="timeRangeFilter">
+                            <option value="all">All Time</option>
+                            <option value="year">Past Year</option>
+                            <option value="quarter">Past Quarter</option>
+                            <option value="month">Past Month</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Overview Tab Content -->
+            <div class="tab-content active" id="overview-tab">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Total Projects</h3>
+                        <div class="value" id="totalProjects">0</div>
+                        <div class="change positive">
+                            <i class="fas fa-arrow-up"></i> <span id="projectsChange">0%</span> from previous period
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Total Beneficiaries</h3>
+                        <div class="value" id="totalBeneficiaries">0</div>
+                        <div class="change positive">
+                            <i class="fas fa-arrow-up"></i> <span id="beneficiariesChange">0%</span> from previous period
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Carbon Offset (tons)</h3>
+                        <div class="value" id="totalCarbonOffset">0</div>
+                        <div class="change positive">
+                            <i class="fas fa-arrow-up"></i> <span id="carbonOffsetChange">0%</span> from previous period
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Jobs Created</h3>
+                        <div class="value" id="totalJobs">0</div>
+                        <div class="change positive">
+                            <i class="fas fa-arrow-up"></i> <span id="jobsChange">0%</span> from previous period
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Impact Distribution by Category</h3>
+                    <div class="chart">
+                        <canvas id="impactDistributionChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Impact Trends Over Time</h3>
+                    <div class="chart">
+                        <canvas id="impactTrendsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>SDG Contribution</h3>
+                    <div class="chart">
+                        <canvas id="sdgContributionChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="data-table">
+                    <h3>Recent Projects</h3>
+                    <table id="recentProjectsTable">
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Type</th>
+                                <th>Blockchain</th>
+                                <th>Social Impact</th>
+                                <th>Environmental Impact</th>
+                                <th>Economic Impact</th>
+                                <th>Governance Impact</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Social Impact Tab Content -->
+            <div class="tab-content" id="social-tab">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Total Beneficiaries</h3>
+                        <div class="value" id="socialBeneficiaries">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Communities Served</h3>
+                        <div class="value" id="socialCommunities">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Projects with Social Focus</h3>
+                        <div class="value" id="socialProjects">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Top Social SDG</h3>
+                        <div class="value" id="topSocialSDG">-</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Social Impact by Project Type</h3>
+                    <div class="chart">
+                        <canvas id="socialImpactByTypeChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Social SDG Distribution</h3>
+                    <div class="chart">
+                        <canvas id="socialSDGChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Environmental Impact Tab Content -->
+            <div class="tab-content" id="environmental-tab">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Total Carbon Offset (tons)</h3>
+                        <div class="value" id="envCarbonOffset">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Avg. Energy Efficiency Improvement</h3>
+                        <div class="value" id="envEnergyEfficiency">0%</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Projects with Environmental Focus</h3>
+                        <div class="value" id="envProjects">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Top Environmental SDG</h3>
+                        <div class="value" id="topEnvSDG">-</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Carbon Offset by Blockchain</h3>
+                    <div class="chart">
+                        <canvas id="carbonOffsetByChainChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Environmental SDG Distribution</h3>
+                    <div class="chart">
+                        <canvas id="environmentalSDGChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Economic Impact Tab Content -->
+            <div class="tab-content" id="economic-tab">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Total Jobs Created</h3>
+                        <div class="value" id="econJobs">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Total Investment Generated</h3>
+                        <div class="value" id="econInvestment">$0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Projects with Economic Focus</h3>
+                        <div class="value" id="econProjects">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Top Economic SDG</h3>
+                        <div class="value" id="topEconSDG">-</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Investment by Project Type</h3>
+                    <div class="chart">
+                        <canvas id="investmentByTypeChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Economic SDG Distribution</h3>
+                    <div class="chart">
+                        <canvas id="economicSDGChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Governance Impact Tab Content -->
+            <div class="tab-content" id="governance-tab">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Total Governance Participants</h3>
+                        <div class="value" id="govParticipants">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Total Governance Proposals</h3>
+                        <div class="value" id="govProposals">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Projects with Governance Focus</h3>
+                        <div class="value" id="govProjects">0</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Top Governance SDG</h3>
+                        <div class="value" id="topGovSDG">-</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Governance Participation by Blockchain</h3>
+                    <div class="chart">
+                        <canvas id="governanceByChainChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Governance SDG Distribution</h3>
+                    <div class="chart">
+                        <canvas id="governanceSDGChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- My Projects Tab Content -->
+            <div class="tab-content" id="my-projects-tab">
+                <div class="my-projects-header">
+                    <h3>My Impact Projects</h3>
+                    <a href="impact-form.html" class="btn primary">Add New Project</a>
+                </div>
+                
+                <div class="data-table">
+                    <table id="myProjectsTable">
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Type</th>
+                                <th>Blockchain</th>
+                                <th>Status</th>
+                                <th>Created</th>
+                                <th>Last Updated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="no-projects-message" id="noProjectsMessage" style="display: none;">
+                    <p>You haven't created any impact projects yet.</p>
+                    <a href="impact-form.html" class="btn primary">Create Your First Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Impact Web3</h2>
+                    <p>Measuring blockchain impact for a better world</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#architecture">Architecture</a></li>
+                            <li><a href="index.html#roadmap">Roadmap</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="impact-form.html">Submit Impact Data</a></li>
+                            <li><a href="#">API Documentation</a></li>
+                            <li><a href="#">System Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Community</h3>
+                        <ul>
+                            <li><a href="https://github.com/impact-web3" target="_blank">GitHub</a></li>
+                            <li><a href="https://twitter.com/ImpactWeb3" target="_blank">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/impact-web3" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://discord.gg/impactweb3" target="_blank">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Impact Web3. All rights reserved.</p>
+                <p>Licensed under <a href="#">MIT License</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div class="modal" id="projectDetailsModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <span class="close-modal" id="closeProjectDetailsModal">&times;</span>
+            <div class="modal-header">
+                <h3 id="projectDetailsTitle">Project Details</h3>
+            </div>
+            <div class="modal-body" id="projectDetailsContent">
+                <!-- Content will be dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

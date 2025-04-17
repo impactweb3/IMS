@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Impact Data - Impact Web3</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Submit your blockchain project's impact data to measure and verify your real-world impact.">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Impact Web3</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#architecture">Architecture</a></li>
+                    <li><a href="index.html#roadmap">Roadmap</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <!-- Auth buttons will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </header>
+
+    <section class="impact-form-container">
+        <div class="container">
+            <div class="impact-form-header">
+                <h1>Submit Your Impact Data</h1>
+                <p>Use this form to submit impact data for your blockchain project. The data will be verified and published to the public dashboard.</p>
+            </div>
+            
+            <div class="impact-form">
+                <form id="impactDataForm">
+                    <div class="form-section">
+                        <h3>Project Information</h3>
+                        <div class="form-group">
+                            <label for="projectName">Project Name*</label>
+                            <input type="text" id="projectName" name="projectName" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="projectType">Project Type*</label>
+                                    <select id="projectType" name="projectType" required>
+                                        <option value="">Select Type</option>
+                                        <option value="defi">DeFi</option>
+                                        <option value="nft">NFT</option>
+                                        <option value="dao">DAO</option>
+                                        <option value="infrastructure">Infrastructure</option>
+                                        <option value="social_impact">Social Impact</option>
+                                        <option value="environmental">Environmental</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="blockchain">Primary Blockchain*</label>
+                                    <select id="blockchain" name="blockchain" required>
+                                        <option value="">Select Blockchain</option>
+                                        <option value="cardano">Cardano</option>
+                                        <option value="midnight">Midnight</option>
+                                        <option value="ethereum">Ethereum</option>
+                                        <option value="polygon">Polygon</option>
+                                        <option value="solana">Solana</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Project Description*</label>
+                            <textarea id="projectDescription" name="projectDescription" rows="4" required></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="projectWebsite">Project Website</label>
+                                    <input type="url" id="projectWebsite" name="projectWebsite" placeholder="https://">
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="contractAddress">Smart Contract Address (if applicable)</label>
+                                    <input type="text" id="contractAddress" name="contractAddress">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Social Impact Metrics</h3>
+                        <p>Provide data on how your project creates social impact.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="beneficiaries">Number of Beneficiaries</label>
+                                    <input type="number" id="beneficiaries" name="socialImpact.beneficiaries" min="0">
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="communities">Communities Served</label>
+                                    <input type="number" id="communities" name="socialImpact.communities" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="socialImpactDescription">Social Impact Description</label>
+                            <textarea id="socialImpactDescription" name="socialImpact.description" rows="3"></textarea>
+                            <small>Describe how your project creates social impact, including any qualitative outcomes.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="socialSDGs">Relevant UN Sustainable Development Goals</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg1" name="socialImpact.sdgs" value="1">
+                                    <label for="sdg1">SDG 1: No Poverty</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg2" name="socialImpact.sdgs" value="2">
+                                    <label for="sdg2">SDG 2: Zero Hunger</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg3" name="socialImpact.sdgs" value="3">
+                                    <label for="sdg3">SDG 3: Good Health and Well-being</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg4" name="socialImpact.sdgs" value="4">
+                                    <label for="sdg4">SDG 4: Quality Education</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg5" name="socialImpact.sdgs" value="5">
+                                    <label for="sdg5">SDG 5: Gender Equality</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Environmental Impact Metrics</h3>
+                        <p>Provide data on how your project impacts the environment.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="carbonOffset">Carbon Offset (tons CO2)</label>
+                                    <input type="number" id="carbonOffset" name="environmentalImpact.carbonOffset" min="0" step="0.01">
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="energyEfficiency">Energy Efficiency Improvement (%)</label>
+                                    <input type="number" id="energyEfficiency" name="environmentalImpact.energyEfficiency" min="0" max="100" step="0.1">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="environmentalImpactDescription">Environmental Impact Description</label>
+                            <textarea id="environmentalImpactDescription" name="environmentalImpact.description" rows="3"></textarea>
+                            <small>Describe how your project impacts the environment, including any conservation efforts.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="environmentalSDGs">Relevant UN Sustainable Development Goals</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg6" name="environmentalImpact.sdgs" value="6">
+                                    <label for="sdg6">SDG 6: Clean Water and Sanitation</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg7" name="environmentalImpact.sdgs" value="7">
+                                    <label for="sdg7">SDG 7: Affordable and Clean Energy</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg12" name="environmentalImpact.sdgs" value="12">
+                                    <label for="sdg12">SDG 12: Responsible Consumption and Production</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg13" name="environmentalImpact.sdgs" value="13">
+                                    <label for="sdg13">SDG 13: Climate Action</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg14" name="environmentalImpact.sdgs" value="14">
+                                    <label for="sdg14">SDG 14: Life Below Water</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg15" name="environmentalImpact.sdgs" value="15">
+                                    <label for="sdg15">SDG 15: Life on Land</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Economic Impact Metrics</h3>
+                        <p>Provide data on the economic impact of your project.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="jobsCreated">Jobs Created</label>
+                                    <input type="number" id="jobsCreated" name="economicImpact.jobsCreated" min="0">
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="investmentGenerated">Investment Generated (USD)</label>
+                                    <input type="number" id="investmentGenerated" name="economicImpact.investmentGenerated" min="0" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="economicImpactDescription">Economic Impact Description</label>
+                            <textarea id="economicImpactDescription" name="economicImpact.description" rows="3"></textarea>
+                            <small>Describe how your project creates economic value, including any financial inclusion aspects.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="economicSDGs">Relevant UN Sustainable Development Goals</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg8" name="economicImpact.sdgs" value="8">
+                                    <label for="sdg8">SDG 8: Decent Work and Economic Growth</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg9" name="economicImpact.sdgs" value="9">
+                                    <label for="sdg9">SDG 9: Industry, Innovation and Infrastructure</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg10" name="economicImpact.sdgs" value="10">
+                                    <label for="sdg10">SDG 10: Reduced Inequality</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg11" name="economicImpact.sdgs" value="11">
+                                    <label for="sdg11">SDG 11: Sustainable Cities and Communities</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Governance Impact Metrics</h3>
+                        <p>Provide data on how your project impacts governance and decision-making.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="participantsCount">Governance Participants</label>
+                                    <input type="number" id="participantsCount" name="governanceImpact.participantsCount" min="0">
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="proposalsCount">Governance Proposals</label>
+                                    <input type="number" id="proposalsCount" name="governanceImpact.proposalsCount" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="governanceImpactDescription">Governance Impact Description</label>
+                            <textarea id="governanceImpactDescription" name="governanceImpact.description" rows="3"></textarea>
+                            <small>Describe how your project impacts governance, including any transparency or accountability aspects.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="governanceSDGs">Relevant UN Sustainable Development Goals</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg16" name="governanceImpact.sdgs" value="16">
+                                    <label for="sdg16">SDG 16: Peace, Justice and Strong Institutions</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sdg17" name="governanceImpact.sdgs" value="17">
+                                    <label for="sdg17">SDG 17: Partnerships for the Goals</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Verification Information</h3>
+                        <p>Provide information to help verify your impact claims.</p>
+                        
+                        <div class="form-group">
+                            <label for="verificationMethod">Verification Method*</label>
+                            <select id="verificationMethod" name="verification.method" required>
+                                <option value="">Select Method</option>
+                                <option value="self">Self-reported</option>
+                                <option value="third_party">Third-party verified</option>
+                                <option value="blockchain">On-chain data</option>
+                                <option value="hybrid">Hybrid approach</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="verificationDetails">Verification Details</label>
+                            <textarea id="verificationDetails" name="verification.details" rows="3"></textarea>
+                            <small>Provide details about how your impact data can be verified, including any third-party verifiers or on-chain data sources.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="evidenceLinks">Evidence Links</label>
+                            <textarea id="evidenceLinks" name="verification.evidenceLinks" rows="3" placeholder="https://example.com/evidence1&#10;https://example.com/evidence2"></textarea>
+                            <small>Provide links to evidence supporting your impact claims (one per line).</small>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" id="saveAsDraft">Save as Draft</button>
+                        <button type="submit" class="btn primary">Submit Impact Data</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Impact Web3</h2>
+                    <p>Measuring blockchain impact for a better world</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#architecture">Architecture</a></li>
+                            <li><a href="index.html#roadmap">Roadmap</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="impact-form.html">Submit Impact Data</a></li>
+                            <li><a href="#">API Documentation</a></li>
+                            <li><a href="#">System Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Community</h3>
+                        <ul>
+                            <li><a href="https://github.com/impact-web3" target="_blank">GitHub</a></li>
+                            <li><a href="https://twitter.com/ImpactWeb3" target="_blank">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/impact-web3" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://discord.gg/impactweb3" target="_blank">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Impact Web3. All rights reserved.</p>
+                <p>Licensed under <a href="#">MIT License</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/impact-form.js"></script>
+</body>
+</html>

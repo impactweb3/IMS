@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Web3 - Measuring Blockchain Impact for a Better World</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Impact Web3 is a comprehensive impact measurement system designed for blockchain projects, with a focus on Cardano and Midnight blockchains while maintaining compatibility with EVM-based chains.">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Impact Web3</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn auth-btn login-btn" id="loginBtn">Log In</a>
+                <a href="#" class="btn auth-btn signup-btn" id="signupBtn">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Measuring Blockchain Impact for a Better World</h1>
+                <p>A comprehensive impact measurement system designed for blockchain projects, with a focus on Cardano and Midnight blockchains while maintaining compatibility with EVM-based chains.</p>
+                <div class="cta-buttons">
+                    <a href="#features" class="btn primary">Explore Features</a>
+                    <a href="#" class="btn secondary" id="getStartedBtn">Get Started</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-image.svg" alt="Impact Web3 Visualization">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Impact Web3</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Impact Web3 addresses the critical need for standardized impact measurement in the blockchain space. By providing a comprehensive framework for measuring, verifying, and communicating impact across social, environmental, economic, and governance dimensions, Impact Web3 enables:</p>
+                    <ul>
+                        <li><strong>Project Proposers:</strong> To demonstrate the real-world impact of their initiatives</li>
+                        <li><strong>Evaluators:</strong> To assess projects based on standardized metrics</li>
+                        <li><strong>Community Members:</strong> To participate in and benefit from impact-focused projects</li>
+                        <li><strong>Investors:</strong> To make informed decisions based on verified impact data</li>
+                        <li><strong>Policymakers:</strong> To understand the broader impact of blockchain technology</li>
+                    </ul>
+                </div>
+                <div class="vision-mission">
+                    <div class="vision">
+                        <h3>Vision</h3>
+                        <p>To create a world where blockchain technology drives measurable, verifiable, and transparent positive impact across social, environmental, economic, and governance dimensions.</p>
+                    </div>
+                    <div class="mission">
+                        <h3>Mission</h3>
+                        <p>Impact Web3 empowers blockchain projects to measure, verify, and communicate their real-world impact through a standardized, interoperable, and blockchain-agnostic framework that bridges on-chain activities with off-chain outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon impact-framework">
+                        <i class="fas fa-chart-pie" style="color: white;"></i>
+                    </div>
+                    <h3>Comprehensive Impact Framework</h3>
+                    <ul>
+                        <li>Four Impact Dimensions: Social, Environmental, Economic, and Governance</li>
+                        <li>Standardized Metrics: Common language for measuring impact</li>
+                        <li>Customizable Indicators: Adaptable to different project types and contexts</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon blockchain-verification">
+                        <i class="fas fa-link" style="color: white;"></i>
+                    </div>
+                    <h3>Blockchain-Based Verification</h3>
+                    <ul>
+                        <li>On-Chain Verification: Immutable record of impact claims</li>
+                        <li>Multi-Chain Support: Cardano, Midnight, and EVM-compatible chains</li>
+                        <li>Cross-Chain Verification: Unified verification across different blockchains</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon user-tools">
+                        <i class="fas fa-tools" style="color: white;"></i>
+                    </div>
+                    <h3>User-Friendly Tools</h3>
+                    <ul>
+                        <li>Impact Dashboard: Visualize and track impact metrics</li>
+                        <li>Data Collection Forms: Standardized forms for impact reporting</li>
+                        <li>API Integration: Connect with existing systems and tools</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon analytics">
+                        <i class="fas fa-chart-line" style="color: white;"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <ul>
+                        <li>Impact Trends: Track changes in impact metrics over time</li>
+                        <li>Comparative Analysis: Benchmark against similar projects</li>
+                        <li>Predictive Insights: Forecast future impact based on current data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2>System Architecture</h2>
+            <p>Impact Web3 follows a modular, microservices-based architecture that enables flexibility, scalability, and interoperability:</p>
+            <div class="architecture-diagram">
+                <img src="images/architecture.svg" alt="Impact Web3 Architecture Diagram">
+            </div>
+            <div class="architecture-description">
+                <div class="arch-layer">
+                    <h3>Client Layer</h3>
+                    <p>Web Client, Mobile Client, Admin Portal, API Clients</p>
+                </div>
+                <div class="arch-layer">
+                    <h3>API Gateway</h3>
+                    <p>Authentication, Rate Limiting, Routing, Logging</p>
+                </div>
+                <div class="arch-layer">
+                    <h3>Core Services</h3>
+                    <p>User Service, Project Service, Impact Service, Report Service</p>
+                </div>
+                <div class="arch-layer">
+                    <h3>Blockchain Integration Layer</h3>
+                    <p>Cardano Adapter, Midnight Adapter, EVM Adapter, Adapter Factory</p>
+                </div>
+                <div class="arch-layer">
+                    <h3>Data Storage Layer</h3>
+                    <p>SQL Database, IPFS Storage, Blockchain DB, Time Series</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <h2>Development Roadmap</h2>
+            <div class="roadmap-timeline">
+                <div class="roadmap-phase">
+                    <h3>Phase 1: Foundation</h3>
+                    <p class="phase-time">Months 1-3</p>
+                    <ul>
+                        <li>Core services implementation</li>
+                        <li>Basic Cardano integration</li>
+                        <li>Data storage layer</li>
+                        <li>Authentication system</li>
+                        <li>Basic web interface</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 2: Enhanced Functionality</h3>
+                    <p class="phase-time">Months 4-6</p>
+                    <ul>
+                        <li>Advanced analytics</li>
+                        <li>EVM integration</li>
+                        <li>Reporting system</li>
+                        <li>Mobile-responsive UI</li>
+                        <li>API for third-party integration</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 3: Advanced Features</h3>
+                    <p class="phase-time">Months 7-9</p>
+                    <ul>
+                        <li>Midnight integration</li>
+                        <li>Cross-chain verification</li>
+                        <li>Machine learning for impact prediction</li>
+                        <li>Advanced visualization</li>
+                        <li>Mobile applications</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 4: Scaling and Optimization</h3>
+                    <p class="phase-time">Months 10-12</p>
+                    <ul>
+                        <li>Performance optimization</li>
+                        <li>Enhanced security features</li>
+                        <li>Comprehensive documentation</li>
+                        <li>Community tools</li>
+                        <li>Governance framework</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Interested in learning more about Impact Web3 or contributing to the project? Reach out to us through any of the following channels:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:info@impactweb3.org">info@impactweb3.org</a></li>
+                        <li><strong>Twitter:</strong> <a href="https://twitter.com/ImpactWeb3" target="_blank">@ImpactWeb3</a></li>
+                        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/company/impact-web3" target="_blank">Impact Web3</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/impact-web3" target="_blank">github.com/impact-web3</a></li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Impact Web3</h2>
+                    <p>Measuring blockchain impact for a better world</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#architecture">Architecture</a></li>
+                            <li><a href="#roadmap">Roadmap</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="impact-form.html">Submit Impact Data</a></li>
+                            <li><a href="#">API Documentation</a></li>
+                            <li><a href="#">System Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Community</h3>
+                        <ul>
+                            <li><a href="https://github.com/impact-web3" target="_blank">GitHub</a></li>
+                            <li><a href="https://twitter.com/ImpactWeb3" target="_blank">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/impact-web3" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://discord.gg/impactweb3" target="_blank">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Impact Web3. All rights reserved.</p>
+                <p>Licensed under <a href="#">MIT License</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeLoginModal">&times;</span>
+            <div class="modal-header">
+                <h3>Log In to Your Account</h3>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn primary" style="width: 100%;">Log In</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="#" id="switchToSignup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeSignupModal">&times;</span>
+            <div class="modal-header">
+                <h3>Create Your Account</h3>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn primary" style="width: 100%;">Sign Up</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>Already have an account? <a href="#" id="switchToLogin">Log in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

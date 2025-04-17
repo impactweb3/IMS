@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Impact Web3</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Create your Impact Web3 account to start measuring and reporting blockchain impact.">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Impact Web3</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#architecture">Architecture</a></li>
+                    <li><a href="index.html#roadmap">Roadmap</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn auth-btn login-btn" id="loginBtn">Log In</a>
+                <a href="#" class="btn auth-btn signup-btn" id="signupBtn">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="signup-section">
+        <div class="container">
+            <div class="signup-container">
+                <div class="signup-header">
+                    <h2>Create Your Impact Web3 Account</h2>
+                    <p>Join our community of impact-focused blockchain projects and start measuring your real-world impact today.</p>
+                </div>
+                <div class="signup-form-container">
+                    <form id="fullSignupForm">
+                        <div class="form-section">
+                            <h3>Account Information</h3>
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupEmail">Email Address</label>
+                                <input type="email" id="signupEmail" name="email" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label for="signupPassword">Password</label>
+                                        <input type="password" id="signupPassword" name="password" required>
+                                        <small>Must be at least 8 characters with a number and special character</small>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label for="confirmPassword">Confirm Password</label>
+                                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Organization Information (Optional)</h3>
+                            <div class="form-group">
+                                <label for="orgName">Organization Name</label>
+                                <input type="text" id="orgName" name="orgName">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label for="orgType">Organization Type</label>
+                                        <select id="orgType" name="orgType">
+                                            <option value="">Select Type</option>
+                                            <option value="nonprofit">Nonprofit</option>
+                                            <option value="forprofit">For-profit</option>
+                                            <option value="government">Government</option>
+                                            <option value="academic">Academic</option>
+                                            <option value="individual">Individual</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label for="orgWebsite">Website</label>
+                                        <input type="url" id="orgWebsite" name="orgWebsite" placeholder="https://">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Impact Focus Areas</h3>
+                            <p>Select the impact areas that are most relevant to your projects:</p>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="social" name="impactAreas" value="social">
+                                    <label for="social">Social Impact</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="environmental" name="impactAreas" value="environmental">
+                                    <label for="environmental">Environmental Impact</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="economic" name="impactAreas" value="economic">
+                                    <label for="economic">Economic Impact</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="governance" name="impactAreas" value="governance">
+                                    <label for="governance">Governance Impact</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="checkbox-item terms-checkbox">
+                                <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                                <label for="termsAgree">I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a></label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary">Create Account</button>
+                            <p>Already have an account? <a href="#" id="goToLogin">Log in</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Impact Web3</h2>
+                    <p>Measuring blockchain impact for a better world</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#architecture">Architecture</a></li>
+                            <li><a href="index.html#roadmap">Roadmap</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="impact-form.html">Submit Impact Data</a></li>
+                            <li><a href="#">API Documentation</a></li>
+                            <li><a href="#">System Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Community</h3>
+                        <ul>
+                            <li><a href="https://github.com/impact-web3" target="_blank">GitHub</a></li>
+                            <li><a href="https://twitter.com/ImpactWeb3" target="_blank">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/impact-web3" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://discord.gg/impactweb3" target="_blank">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Impact Web3. All rights reserved.</p>
+                <p>Licensed under <a href="#">MIT License</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeLoginModal">&times;</span>
+            <div class="modal-header">
+                <h3>Log In to Your Account</h3>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn primary" style="width: 100%;">Log In</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="#" id="switchToSignup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>
