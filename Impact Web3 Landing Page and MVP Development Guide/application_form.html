@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Web3 - Application Form</title>
+    <link rel="stylesheet" href="../landing_page/styles.css">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-section:last-child {
+            border-bottom: none;
+        }
+        
+        .form-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        .form-group {
+            flex: 1 1 300px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1 1 200px;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .form-note {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #eee;
+            z-index: 1;
+        }
+        
+        .progress-step {
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            padding: 0 10px;
+        }
+        
+        .progress-step.active {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .impact-scale {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+        
+        .impact-scale-item {
+            text-align: center;
+            flex: 1;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .impact-slider {
+            width: 100%;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Impact<span>Web3</span></h1>
+            </div>
+            <div class="nav-links">
+                <a href="../landing_page/index.html">Home</a>
+                <a href="#" class="active">Application Form</a>
+                <a href="reporting_form.html">Reporting Form</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" style="margin-top: 100px;">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Project Impact Application Form</h1>
+                <p>Please provide information about your project's expected impact across different dimensions.</p>
+            </div>
+            
+            <div class="form-progress">
+                <div class="progress-step active">Project Info</div>
+                <div class="progress-step">Social Impact</div>
+                <div class="progress-step">Environmental Impact</div>
+                <div class="progress-step">Economic Impact</div>
+                <div class="progress-step">Governance Impact</div>
+                <div class="progress-step">Review & Submit</div>
+            </div>
+            
+            <form id="applicationForm">
+                <div class="form-section">
+                    <h2>Project Information</h2>
+                    <div class="form-note">
+                        This section collects basic information about your project. All fields are required unless marked as optional.
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projectTitle">Project Title</label>
+                            <input type="text" id="projectTitle" name="projectTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fundingRound">Funding Round</label>
+                            <select id="fundingRound" name="fundingRound" required>
+                                <option value="">Select Funding Round</option>
+                                <option value="fund10">Fund 10</option>
+                                <option value="fund11">Fund 11</option>
+                                <option value="fund12">Fund 12</option>
+                                <option value="fund13">Fund 13</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projectDescription">Project Description</label>
+                        <textarea id="projectDescription" name="projectDescription" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="requestedFunding">Requested Funding (in ADA)</label>
+                            <input type="number" id="requestedFunding" name="requestedFunding" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDuration">Project Duration (in months)</label>
+                            <input type="number" id="projectDuration" name="projectDuration" min="1" max="24" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="blockchainAddress">Cardano Wallet Address</label>
+                        <input type="text" id="blockchainAddress" name="blockchainAddress" required>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Social Impact</h2>
+                    <div class="form-note">
+                        Social impact refers to the effect your project has on the well-being, quality of life, and social dynamics within communities.
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Does your project address any of the following social issues?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="socialEducation" name="socialIssues" value="education">
+                                <label for="socialEducation">Educational equity</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="socialHealthcare" name="socialIssues" value="healthcare">
+                                <label for="socialHealthcare">Healthcare access</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="socialPoverty" name="socialIssues" value="poverty">
+                                <label for="socialPoverty">Poverty reduction</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="socialInclusion" name="socialIssues" value="inclusion">
+                                <label for="socialInclusion">Social inclusion</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="socialImpactDescription">Describe how your project will address these social issues</label>
+                        <textarea id="socialImpactDescription" name="socialImpactDescription" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Does your project include financial literacy or capacity-building programs?</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="capacityBuildingYes" name="capacityBuilding" value="yes">
+                                    <label for="capacityBuildingYes">Yes</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="capacityBuildingNo" name="capacityBuilding" value="no">
+                                    <label for="capacityBuildingNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="capacityBuildingOutcomes">Expected outcomes of capacity-building programs</label>
+                            <textarea id="capacityBuildingOutcomes" name="capacityBuildingOutcomes" rows="4"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="directJobs">Expected number of direct jobs created</label>
+                            <input type="number" id="directJobs" name="directJobs" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="indirectJobs">Expected number of indirect jobs created</label>
+                            <input type="number" id="indirectJobs" name="indirectJobs" min="0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Environmental Impact</h2>
+                    <div class="form-note">
+                        Environmental impact assesses the effect that your project has on the natural environment, including sustainability, conservation, and resource use.
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Does your project address environmental challenges?</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="environmentalYes" name="environmental" value="yes">
+                                <label for="environmentalYes">Yes</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="environmentalNo" name="environmental" value="no">
+                                <label for="environmentalNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="environmentalGoals">Describe your environmental goals</label>
+                        <textarea id="environmentalGoals" name="environmentalGoals" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carbonReduction">Expected reduction in carbon footprint (%)</label>
+                            <input type="number" id="carbonReduction" name="carbonReduction" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="energyReduction">Expected reduction in energy consumption (%)</label>
+                            <input type="number" id="energyReduction" name="energyReduction" min="0" max="100">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Does your project plan to adopt renewable energy or sustainability initiatives?</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="renewableYes" name="renewable" value="yes">
+                                <label for="renewableYes">Yes</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="renewableNo" name="renewable" value="no">
+                                <label for="renewableNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sustainabilityPlans">Describe your renewable energy or sustainability plans</label>
+                        <textarea id="sustainabilityPlans" name="sustainabilityPlans" rows="4"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Economic Impact</h2>
+                    <div class="form-note">
+                        Economic impact evaluates how your project influences economic growth, job creation, local entrepreneurship, or financial inclusion.
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Does your project aim to increase financial inclusion?</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="financialInclusionYes" name="financialInclusion" value="yes">
+                                <label for="financialInclusionYes">Yes</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="financialInclusionNo" name="financialInclusion" value="no">
+                                <label for="financialInclusionNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+         
+(Content truncated due to size limit. Use line ranges to read in chunks)

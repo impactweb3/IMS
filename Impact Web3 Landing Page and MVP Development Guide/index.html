@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Web3 - Blockchain Impact Measurement System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Impact<span>Web3</span></h1>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#metrics">Metrics</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#metrics">Metrics</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Measure What Matters in Web3</h1>
+                <p>A comprehensive impact measurement system for blockchain projects, built on Cardano and compatible with any blockchain technology.</p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">View Demo</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-image.svg" alt="Impact Web3 Dashboard Visualization">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transforming Impact Measurement in Blockchain</h2>
+                <p>Impact Web3 provides a standardized framework to measure, track, and report the social, environmental, economic, and governance impacts of blockchain projects.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Social Impact</h3>
+                    <p>Measure effects on well-being, quality of life, and social dynamics within communities.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Impact</h3>
+                    <p>Track effects on the natural environment, sustainability, and resource efficiency.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Economic Impact</h3>
+                    <p>Evaluate influence on economic growth, job creation, and financial inclusion.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Governance Impact</h3>
+                    <p>Assess contributions to improving governance structures and processes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Features</h2>
+                <p>Our Impact Measurement System is designed with scalability, interoperability, and sustainability at its core.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>User-Friendly Interface</h3>
+                    <p>Straightforward forms and questions aligned with Project Catalyst's simple application and reporting processes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Comprehensive Data Collection</h3>
+                    <p>Collect data on social, economic, environmental, and governance impacts through standardized metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Flexible & Scalable</h3>
+                    <p>A system that scales with ecosystem growth while maintaining a set of core indicators.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Open Standards & APIs</h3>
+                    <p>Facilitate integration with other platforms, enabling use by NGOs and external partners.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Feedback Mechanisms</h3>
+                    <p>Continuous improvement through user feedback and refinement of the measurement framework.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-Chain Compatibility</h3>
+                    <p>Built on Cardano and Midnight, with compatibility for EVM and other blockchain technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metrics" class="metrics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Impact Metrics</h2>
+                <p>Our system tracks key indicators across multiple dimensions to provide a comprehensive view of project impact.</p>
+            </div>
+            <div class="metrics-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="ecosystem">Ecosystem Growth</button>
+                    <button class="tab-btn" data-tab="social">Social Impact</button>
+                    <button class="tab-btn" data-tab="economic">Economic Impact</button>
+                    <button class="tab-btn" data-tab="tech">Tech Adoption</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-content active" id="ecosystem-tab">
+                        <h3>Ecosystem Growth & Decentralization</h3>
+                        <ul>
+                            <li>Governance participation growth over time</li>
+                            <li>Number of unique proposers in each funding round</li>
+                            <li>Percentage of wallets that voted in each round</li>
+                            <li>Number of self-sustaining projects</li>
+                            <li>Number of independent partnerships formed</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="social-tab">
+                        <h3>Social & Environmental Impact</h3>
+                        <ul>
+                            <li>Number of funded projects addressing social issues</li>
+                            <li>Reduction in carbon footprint of operations</li>
+                            <li>Percentage of SPOs using renewable energy</li>
+                            <li>Number of participants in capacity-building programs</li>
+                            <li>Resource efficiency improvements</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="economic-tab">
+                        <h3>Economic Empowerment</h3>
+                        <ul>
+                            <li>Financial inclusion increase in underrepresented regions</li>
+                            <li>Number of unique wallet addresses in underserved regions</li>
+                            <li>Direct and indirect job creation</li>
+                            <li>Revenue generated by projects</li>
+                            <li>Number of businesses benefiting economically</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="tech-tab">
+                        <h3>Technological Adoption</h3>
+                        <ul>
+                            <li>Percentage of transactions from Catalyst-funded projects</li>
+                            <li>Number of dApp interactions and unique users</li>
+                            <li>Partnerships with commercial entities or government agencies</li>
+                            <li>Adoption rate across different sectors</li>
+                            <li>Growth in businesses integrating blockchain solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2>System Architecture</h2>
+                <p>A modular, scalable architecture designed for integration with blockchain technologies.</p>
+            </div>
+            <div class="architecture-image">
+                <img src="images/architecture.svg" alt="Impact Web3 System Architecture">
+            </div>
+            <div class="architecture-grid">
+                <div class="architecture-card">
+                    <h3>Data Collection Module</h3>
+                    <p>Capture KPIs and impact data from proposals and reports through simplified forms and API integration.</p>
+                </div>
+                <div class="architecture-card">
+                    <h3>Data Analysis Module</h3>
+                    <p>Real-time analysis and trend tracking with dashboards and visual tools to monitor performance.</p>
+                </div>
+                <div class="architecture-card">
+                    <h3>Reporting Module</h3>
+                    <p>Transparent, accessible, and customized reporting with visual dashboards and export options.</p>
+                </div>
+                <div class="architecture-card">
+                    <h3>Feedback Mechanism</h3>
+                    <p>Continuous improvement through user feedback, updates, and real-time adjustments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Demo</h2>
+                <p>Experience our Impact Measurement System prototype in action.</p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-tabs">
+                    <button class="demo-tab active" data-demo="application">Application Form</button>
+                    <button class="demo-tab" data-demo="reporting">Reporting Form</button>
+                    <button class="demo-tab" data-demo="dashboard">Impact Dashboard</button>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-frame active" id="application-demo">
+                        <div class="demo-placeholder">
+                            <h3>Project Application Form</h3>
+                            <p>Collect comprehensive impact data at the project proposal stage.</p>
+                            <a href="#" class="btn btn-primary">Try Demo</a>
+                        </div>
+                    </div>
+                    <div class="demo-frame" id="reporting-demo">
+                        <div class="demo-placeholder">
+                            <h3>Project Reporting Form</h3>
+                            <p>Track actual impact metrics and outcomes from funded projects.</p>
+                            <a href="#" class="btn btn-primary">Try Demo</a>
+                        </div>
+                    </div>
+                    <div class="demo-frame" id="dashboard-demo">
+                        <div class="demo-placeholder">
+                            <h3>Impact Dashboard</h3>
+                            <p>Visualize and analyze impact data across multiple dimensions.</p>
+                            <a href="#" class="btn btn-primary">Try Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Measure Your Impact?</h2>
+                <p>Join the Impact Web3 ecosystem and start tracking the real-world impact of your blockchain projects.</p>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Interested in implementing Impact Web3 for your organization? Get in touch with our team.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" name="organization">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@impactweb3.io</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-globe"></i>
+                        <p>www.impactweb3.io</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-github"></i>
+                        <p>github.com/impactweb3</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-twitter"></i>
+                        <p>@ImpactWeb3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Impact<span>Web3</span></h2>
+                    <p>Measuring blockchain impact for a better world</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Navigation</h3>
+                        <a href="#about">About</a>
+                        <a href="#features">Features</a>
+                        <a href="#metrics">Metrics</a>
+                        <a href="#architecture">Architecture</a>
+           
+(Content truncated due to size limit. Use line ranges to read in chunks)

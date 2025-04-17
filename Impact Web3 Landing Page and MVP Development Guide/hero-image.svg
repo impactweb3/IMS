@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a86ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8338ec;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff006e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8338ec;stop-opacity:0.7" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3a86ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff006e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Elements -->
+  <circle cx="150" cy="450" r="100" fill="url(#grad1)" opacity="0.1" />
+  <circle cx="650" cy="150" r="120" fill="url(#grad2)" opacity="0.1" />
+  <circle cx="400" cy="300" r="200" fill="none" stroke="url(#grad3)" stroke-width="2" opacity="0.2" />
+  
+  <!-- Dashboard Frame -->
+  <rect x="150" y="100" width="500" height="350" rx="10" ry="10" fill="#ffffff" stroke="#e0e0e0" stroke-width="2" />
+  
+  <!-- Dashboard Header -->
+  <rect x="150" y="100" width="500" height="50" rx="10" ry="10" fill="#f8f9fa" />
+  <text x="180" y="130" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Impact Web3 Dashboard</text>
+  
+  <!-- Dashboard Navigation -->
+  <rect x="150" y="150" width="120" height="300" fill="#f8f9fa" />
+  <circle cx="180" cy="180" r="15" fill="url(#grad1)" />
+  <rect x="210" y="175" width="40" height="10" rx="2" ry="2" fill="#333333" />
+  
+  <circle cx="180" cy="220" r="15" fill="url(#grad2)" />
+  <rect x="210" y="215" width="40" height="10" rx="2" ry="2" fill="#333333" />
+  
+  <circle cx="180" cy="260" r="15" fill="#38b000" />
+  <rect x="210" y="255" width="40" height="10" rx="2" ry="2" fill="#333333" />
+  
+  <circle cx="180" cy="300" r="15" fill="#ffbe0b" />
+  <rect x="210" y="295" width="40" height="10" rx="2" ry="2" fill="#333333" />
+  
+  <!-- Main Dashboard Content -->
+  <rect x="280" y="160" width="360" height="280" fill="#ffffff" />
+  
+  <!-- Impact Metrics Chart -->
+  <rect x="300" y="180" width="320" height="120" rx="5" ry="5" fill="#f8f9fa" />
+  <text x="320" y="200" font-family="Arial" font-size="12" font-weight="bold" fill="#333333">Impact Metrics Overview</text>
+  
+  <!-- Bar Chart -->
+  <rect x="320" y="220" width="40" height="60" fill="url(#grad1)" rx="3" ry="3" />
+  <rect x="370" y="240" width="40" height="40" fill="url(#grad1)" rx="3" ry="3" />
+  <rect x="420" y="210" width="40" height="70" fill="url(#grad1)" rx="3" ry="3" />
+  <rect x="470" y="250" width="40" height="30" fill="url(#grad1)" rx="3" ry="3" />
+  <rect x="520" y="230" width="40" height="50" fill="url(#grad1)" rx="3" ry="3" />
+  
+  <!-- Project Impact Cards -->
+  <rect x="300" y="320" width="150" height="100" rx="5" ry="5" fill="#f8f9fa" />
+  <circle cx="330" cy="350" r="20" fill="url(#grad2)" opacity="0.8" />
+  <rect x="360" y="340" width="70" height="10" rx="2" ry="2" fill="#333333" />
+  <rect x="360" y="360" width="50" height="10" rx="2" ry="2" fill="#666666" />
+  <rect x="320" y="390" width="110" height="5" rx="2" ry="2" fill="#e0e0e0" />
+  <rect x="320" y="400" width="80" height="5" rx="2" ry="2" fill="#e0e0e0" />
+  
+  <rect x="470" y="320" width="150" height="100" rx="5" ry="5" fill="#f8f9fa" />
+  <circle cx="500" cy="350" r="20" fill="#38b000" opacity="0.8" />
+  <rect x="530" y="340" width="70" height="10" rx="2" ry="2" fill="#333333" />
+  <rect x="530" y="360" width="50" height="10" rx="2" ry="2" fill="#666666" />
+  <rect x="490" y="390" width="110" height="5" rx="2" ry="2" fill="#e0e0e0" />
+  <rect x="490" y="400" width="80" height="5" rx="2" ry="2" fill="#e0e0e0" />
+  
+  <!-- Blockchain Elements -->
+  <circle cx="100" cy="100" r="30" fill="url(#grad1)" opacity="0.7" />
+  <circle cx="150" cy="50" r="20" fill="url(#grad2)" opacity="0.7" />
+  <circle cx="200" cy="80" r="25" fill="#38b000" opacity="0.7" />
+  
+  <circle cx="700" cy="500" r="30" fill="url(#grad1)" opacity="0.7" />
+  <circle cx="650" cy="550" r="20" fill="url(#grad2)" opacity="0.7" />
+  <circle cx="600" cy="520" r="25" fill="#38b000" opacity="0.7" />
+  
+  <!-- Connection Lines -->
+  <line x1="100" y1="100" x2="150" y2="50" stroke="#3a86ff" stroke-width="2" opacity="0.5" />
+  <line x1="150" y1="50" x2="200" y2="80" stroke="#3a86ff" stroke-width="2" opacity="0.5" />
+  
+  <line x1="700" y1="500" x2="650" y2="550" stroke="#3a86ff" stroke-width="2" opacity="0.5" />
+  <line x1="650" y1="550" x2="600" y2="520" stroke="#3a86ff" stroke-width="2" opacity="0.5" />
+</svg>

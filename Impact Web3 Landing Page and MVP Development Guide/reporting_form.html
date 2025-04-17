@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Web3 - Reporting Form</title>
+    <link rel="stylesheet" href="../landing_page/styles.css">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-section:last-child {
+            border-bottom: none;
+        }
+        
+        .form-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        .form-group {
+            flex: 1 1 300px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1 1 200px;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .form-note {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #eee;
+            z-index: 1;
+        }
+        
+        .progress-step {
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            padding: 0 10px;
+        }
+        
+        .progress-step.active {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .impact-scale {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+        
+        .impact-scale-item {
+            text-align: center;
+            flex: 1;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .impact-slider {
+            width: 100%;
+            margin-top: 5px;
+        }
+        
+        .metric-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .metric-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .metric-card .description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .metric-values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .metric-value {
+            flex: 1 1 200px;
+        }
+        
+        .metric-value label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .metric-notes {
+            margin-top: 15px;
+        }
+        
+        .metric-notes label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .comparison-indicator {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .comparison-positive {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .comparison-negative {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .comparison-neutral {
+            background-color: #e2e3e5;
+            color: #383d41;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Impact<span>Web3</span></h1>
+            </div>
+            <div class="nav-links">
+                <a href="../landing_page/index.html">Home</a>
+                <a href="application_form.html">Application Form</a>
+                <a href="#" class="active">Reporting Form</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" style="margin-top: 100px;">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Project Impact Reporting Form</h1>
+                <p>Please report on your project's actual impact achievements for the current reporting period.</p>
+            </div>
+            
+            <div class="form-progress">
+                <div class="progress-step active">Project Info</div>
+                <div class="progress-step">Social Impact</div>
+                <div class="progress-step">Environmental Impact</div>
+                <div class="progress-step">Economic Impact</div>
+                <div class="progress-step">Governance Impact</div>
+                <div class="progress-step">Review & Submit</div>
+            </div>
+            
+            <form id="reportingForm">
+                <div class="form-section">
+                    <h2>Project Information</h2>
+                    <div class="form-note">
+                        This section collects basic information about your project for the current reporting period.
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projectTitle">Project Title</label>
+                            <input type="text" id="projectTitle" name="projectTitle" value="DeFi Education Platform" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="fundingRound">Funding Round</label>
+                            <input type="text" id="fundingRound" name="fundingRound" value="Fund 11" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reportingPeriodStart">Reporting Period Start</label>
+                            <input type="date" id="reportingPeriodStart" name="reportingPeriodStart" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportingPeriodEnd">Reporting Period End</label>
+                            <input type="date" id="reportingPeriodEnd" name="reportingPeriodEnd" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projectStatus">Project Status</label>
+                        <select id="projectStatus" name="projectStatus" required>
+                            <option value="">Select Status</option>
+                            <option value="planning">Planning Phase</option>
+                            <option value="development">Development Phase</option>
+                            <option value="testing">Testing Phase</option>
+                            <option value="launch">Launch Phase</option>
+                            <option value="operational">Operational</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="progressSummary">Progress Summary</label>
+                        <textarea id="progressSummary" name="progressSummary" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="challengesFaced">Challenges Faced</label>
+                        <textarea id="challengesFaced" name="challengesFaced" rows="4"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Social Impact</h2>
+                    <div class="form-note">
+                        Report on the actual social impact outcomes achieved during this reporting period.
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3>Community Engagement</h3>
+                        <div class="description">Report on the number of community members actively engaged in your project.</div>
+                        
+                        <div class="metric-values">
+                            <div class="metric-value">
+                                <label for="communityTarget">Target Value</label>
+                                <input type="number" id="communityTarget" name="communityTarget" value="500" readonly>
+                            </div>
+                            <div class="metric-value">
+                                <label for="communityActual">Actual Value</label>
+                                <input type="number" id="communityActual" name="communityActual" required>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-notes">
+                            <label for="communityNotes">Notes/Evidence</label>
+                            <textarea id="communityNotes" name="communityNotes" rows="3"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3>Job Creation</h3>
+                        <div class="description">Report on the number of jobs created by your project.</div>
+                        
+                        <div class="metric-values">
+                            <div class="metric-value">
+                                <label for="directJobsTarget">Target Direct Jobs</label>
+                                <input type="number" id="directJobsTarget" name="directJobsTarget" value="15" readonly>
+                            </div>
+                            <div class="metric-value">
+                                <label for="directJobsActual">Actual Direct Jobs</label>
+                                <input type="number" id="directJobsActual" name="directJobsActual" required>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-values">
+                            <div class="metric-value">
+                                <label for="indirectJobsTarget">Target Indirect Jobs</label>
+                                <input type="number" id="indirectJobsTarget" name="indirectJobsTarget" value="45" readonly>
+                            </div>
+                            <div class="metric-value">
+                                <label for="indirectJobsActual">Actual Indirect Jobs</label>
+                                <input type="number" id="indirectJobsActual" name="indirectJobsActual" required>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-notes">
+                            <label for="jobsNotes">Notes/Evidence</label>
+                            <textarea id="jobsNotes" name="jobsNotes" rows="3"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3>Educational Programs</h3>
+                        <div class="description">Report on the educational and capacity-building programs conducted.</div>
+                        
+                        <div class="metric-values">
+                            <div class="metric-value">
+                                <label for="eventsTarget">Target Number of Events</label>
+                                <input type="number" id="eventsTarget" name="eventsTarget" value="12" readonly>
+                            </div>
+                            <div class="metric-value">
+                                <label for="eventsActual">Actual Number of Events</label>
+                                <input type="number" id="eventsActual" name="eventsActual" required>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-values">
+                            <div class="metric-value">
+                                <label for="participantsTarget">Target Number of Participants</label>
+                                <input type="number" id="participantsTarget" name="participantsTarget" value="300" readonly>
+                            </div>
+                            <div class="metric-value">
+                                <label for="participantsActual">Actual Number of Participants</label>
+                                <input type="number" id="participantsActual" name="participantsActual" required>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-notes">
+                            <label for="educationNotes">Notes/Evidence</label>
+                            <textarea id="educationNotes" name="educationNotes" rows="3"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="socialOutcomes">Describe the actual outcomes achieved in addressing social issues</label>
+                        <textarea id="socialOutcomes" name="socialOutcomes" rows="4" required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Environmental Impact</h2>
+                    <div class="form-note">
+                        Report on the actual environmental impact outcomes achieved during this reporting period.
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3>Carbon Footprint Reduction</h3>
+                        <div class="description">Report on the measured reduction in carbon footprint achieved.</div>
+                        
+                        <div class="metric-values">
+                            <div class="metric-value">
+                                <label for="carbonTarget">Target Reduction (%)</label>
+(Content truncated due to size limit. Use line ranges to read in chunks)
